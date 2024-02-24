@@ -83,15 +83,26 @@ function DiceCalculatorText({
   moves: number[];
   setWeightedAvg: Dispatch<SetStateAction<number>>;
 }) {
+  function teleportIndex(slayerIndex: number): number {
+    const teleportBlocks: { [key: number]: number } = { 1: 7, 12: 4 };
+    const teleportedIndex =
+      slayerIndex in teleportBlocks ? teleportBlocks[slayerIndex] : slayerIndex;
+    return teleportedIndex;
+  }
+
   function getReachableItems(
     items: ItemI[],
     slayerIndex: number,
     moves: number[],
   ): ItemI[] {
-    const reachableIndexes = moves.map((n) => (slayerIndex + n) % 16);
-    const reachableItems = reachableIndexes.map(
-      (idx) => items.filter((item) => item.indexes.includes(idx))[0],
-    ).filter(Boolean);
+    const reachableIndexes = moves.map((n) => {
+      const directIndex = (slayerIndex + n) % 16;
+      const teleportedIndex = teleportIndex(directIndex);
+      return teleportedIndex;
+    });
+    const reachableItems = reachableIndexes
+      .map((idx) => items.filter((item) => item.indexes.includes(idx))[0])
+      .filter(Boolean);
     return reachableItems;
   }
 
@@ -108,8 +119,16 @@ function DiceCalculatorText({
     const eventuallyReachableItems = firstMoveReachableItems.map((item, i) => {
       return isDice(item)
         ? [
-            getReachableItems(items, (slayerIndex + moves[i]) % 16, [1, 4, 6]),
-            getReachableItems(items, (slayerIndex + moves[i]) % 16, [2, 3, 5]),
+            getReachableItems(
+              items,
+              teleportIndex((slayerIndex + moves[i]) % 16),
+              [1, 4, 6],
+            ),
+            getReachableItems(
+              items,
+              teleportIndex((slayerIndex + moves[i]) % 16),
+              [2, 3, 5],
+            ),
           ]
         : item;
     });
