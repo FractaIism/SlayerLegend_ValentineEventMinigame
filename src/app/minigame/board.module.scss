@@ -16,30 +16,30 @@
   stroke: var(--color);
 }
 
-$cyan: rgba(157, 249, 255, 1);
-$violet: rgba(179, 130, 237, 1);
-$mixed: color.mix($cyan, $violet);
+$dice1Color: rgba(157, 249, 255, 1);
+$dice2Color: rgba(179, 130, 237, 1);
+$mixedColor: color.mix($dice1Color, $dice2Color);
 
-.cyan {
-  --color: #{$cyan};
+.dice1Color {
+  --color: #{$dice1Color};
 }
 
-.violet {
-  --color: #{$violet};
+.dice2Color {
+  --color: #{$dice2Color};
 }
 
-.mixed {
-  --color: #{$mixed};
+.mixedColor {
+  --color: #{$mixedColor};
 }
 
-.cyanShadow {
-  flood-color: $cyan;
+.dice1ColorShadow {
+  flood-color: $dice1Color;
 }
 
-.violetShadow {
-  flood-color: $violet;
+.dice2ColorShadow {
+  flood-color: $dice2Color;
 }
 
-.mixedShadow {
-  flood-color: $mixed;
+.mixedColorShadow {
+  flood-color: $mixedColor;
 }

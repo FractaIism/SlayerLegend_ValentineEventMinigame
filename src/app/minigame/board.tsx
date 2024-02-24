@@ -88,9 +88,9 @@ function DecorativeSVGOverlay({
   }
 
   const colors = {
-    CYAN: Symbol("cyan"),
-    VIOLET: Symbol("violet"),
-    MIXED: Symbol("mixed"),
+    DICE1_COLOR: Symbol("dice1_color"),
+    DICE2_COLOR: Symbol("dice2_color"),
+    MIXED_COLOR: Symbol("mixed_color"),
     NONE: Symbol("none"),
   };
 
@@ -100,11 +100,13 @@ function DecorativeSVGOverlay({
 
   return (
     <svg className={styles.overlay} width={boardSize} height={boardSize}>
-      {[styles.cyanShadow, styles.violetShadow, styles.mixedShadow].map(
-        (className) => (
-          <SVGFilter key={className} className={className} />
-        ),
-      )}
+      {[
+        styles.dice1ColorShadow,
+        styles.dice2ColorShadow,
+        styles.mixedColorShadow,
+      ].map((className) => (
+        <SVGFilter key={className} className={className} />
+      ))}
       {range(5).map((row) =>
         range(5).map((col) => {
           if (blockExists(row, col)) {
@@ -113,26 +115,26 @@ function DecorativeSVGOverlay({
             const r236 = isBlockReachable(blockIndex, slayerIndex, [2, 3, 5]);
             const color =
               r145 && r236
-                ? colors.MIXED
+                ? colors.MIXED_COLOR
                 : r145
-                ? colors.CYAN
+                ? colors.DICE1_COLOR
                 : r236
-                ? colors.VIOLET
+                ? colors.DICE2_COLOR
                 : colors.NONE;
             let blockClassName: string;
             let svgFilterId: string;
             switch (color) {
-              case colors.CYAN:
-                blockClassName = styles.cyan;
-                svgFilterId = styles.cyanShadow;
+              case colors.DICE1_COLOR:
+                blockClassName = styles.dice1Color;
+                svgFilterId = styles.dice1ColorShadow;
                 break;
-              case colors.VIOLET:
-                blockClassName = styles.violet;
-                svgFilterId = styles.violetShadow;
+              case colors.DICE2_COLOR:
+                blockClassName = styles.dice2Color;
+                svgFilterId = styles.dice2ColorShadow;
                 break;
-              case colors.MIXED:
-                blockClassName = styles.mixed;
-                svgFilterId = styles.mixedShadow;
+              case colors.MIXED_COLOR:
+                blockClassName = styles.mixedColor;
+                svgFilterId = styles.mixedColorShadow;
                 break;
               default:
                 blockClassName = "";
