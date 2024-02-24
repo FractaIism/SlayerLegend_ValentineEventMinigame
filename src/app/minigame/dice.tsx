@@ -33,7 +33,7 @@ export function DiceCalculator({
         />
         <DiceCalculatorText
           slayerIndex={slayerIndex}
-          moves={[1, 4, 5]}
+          moves={[1, 4, 6]}
           setWeightedAvg={setWeightedAvg145}
         />
       </DiceCalculatorRow>
@@ -44,7 +44,7 @@ export function DiceCalculator({
         />
         <DiceCalculatorText
           slayerIndex={slayerIndex}
-          moves={[2, 3, 6]}
+          moves={[2, 3, 5]}
           setWeightedAvg={setWeightedAvg236}
         />
       </DiceCalculatorRow>
@@ -108,8 +108,8 @@ function DiceCalculatorText({
     const eventuallyReachableItems = firstMoveReachableItems.map((item, i) => {
       return isDice(item)
         ? [
-            getReachableItems(items, (slayerIndex + moves[i]) % 16, [1, 4, 5]),
-            getReachableItems(items, (slayerIndex + moves[i]) % 16, [2, 3, 6]),
+            getReachableItems(items, (slayerIndex + moves[i]) % 16, [1, 4, 6]),
+            getReachableItems(items, (slayerIndex + moves[i]) % 16, [2, 3, 5]),
           ]
         : item;
     });
@@ -134,12 +134,12 @@ function DiceCalculatorText({
               computeWeightedAverage(
                 items,
                 (slayerIndex + moves[i]) % 16,
-                [1, 4, 5],
+                [1, 4, 6],
               ),
               computeWeightedAverage(
                 items,
                 (slayerIndex + moves[i]) % 16,
-                [2, 3, 6],
+                [2, 3, 5],
               ),
             )
           : item.weight) /

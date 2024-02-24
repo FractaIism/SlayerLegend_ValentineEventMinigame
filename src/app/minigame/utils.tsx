@@ -16,11 +16,11 @@ export function indexToPosition(index: number): Position {
     5: { row: 3, col: 0 },
     6: { row: 2, col: 0 },
     7: { row: 1, col: 0 },
-    8: { row: 1, col: 1 },
+    8: { row: 0, col: 1 },
     9: { row: 0, col: 1 },
     10: { row: 0, col: 2 },
     11: { row: 0, col: 3 },
-    12: { row: 0, col: 4 },
+    12: { row: 1, col: 3 },
     13: { row: 1, col: 4 },
     14: { row: 2, col: 4 },
     15: { row: 3, col: 4 },
@@ -36,8 +36,8 @@ interface PositionIndexMappingI {
 
 export function positionToIndex({ row, col }: Position): number {
   const mapping: PositionIndexMappingI = {
-    0: { 1: 9, 2: 10, 3: 11, 4: 12 },
-    1: { 0: 7, 1: 8, 4: 13 },
+    0: { 0: 8, 1: 9, 2: 10, 3: 11 },
+    1: { 0: 7, 1: 8, 3: 12, 4: 13 },
     2: { 0: 6, 4: 14 },
     3: { 0: 5, 4: 15 },
     4: { 0: 4, 1: 3, 2: 2, 3: 1, 4: 0 },

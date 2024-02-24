@@ -79,7 +79,7 @@ function DecorativeSVGOverlay({
     slayerIndex: number,
     moves: number[],
   ) {
-    const teleportBlocks: { [key: number]: number } = { 7: 2, 14: 9 };
+    const teleportBlocks: { [key: number]: number } = { 1: 7, 12: 4 };
     const nextSlayerIndexes = moves.map((n) => (slayerIndex + n) % 16);
     const nextSlayerIndexes2 = nextSlayerIndexes.map((idx) =>
       idx in teleportBlocks ? teleportBlocks[idx] : idx,
@@ -109,8 +109,8 @@ function DecorativeSVGOverlay({
         range(5).map((col) => {
           if (blockExists(row, col)) {
             const blockIndex = positionToIndex({ row, col });
-            const r145 = isBlockReachable(blockIndex, slayerIndex, [1, 4, 5]);
-            const r236 = isBlockReachable(blockIndex, slayerIndex, [2, 3, 6]);
+            const r145 = isBlockReachable(blockIndex, slayerIndex, [1, 4, 6]);
+            const r236 = isBlockReachable(blockIndex, slayerIndex, [2, 3, 5]);
             const color =
               r145 && r236
                 ? colors.MIXED
