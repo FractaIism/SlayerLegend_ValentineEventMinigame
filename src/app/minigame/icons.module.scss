@@ -1,4 +1,8 @@
 $blockSize: 44px;
+$gapSize: 2.6px;
+$offset: -($blockSize + $gapSize);
+$originX: -10px;
+$originY: -12px;
 
 .blockIcon {
   width: $blockSize;
@@ -9,53 +13,66 @@ $blockSize: 44px;
 }
 
 .diamond_x100_5000 {
-  background-position: -55px -9px;
+  background-position-y: $originY + 4 * $offset;
+  background-position-x: $originX + 4 * $offset;
 }
 
 .white_feather_x1 {
-  background-position: -102.5px -9px;
+  background-position-y: $originY + 4 * $offset;
+  background-position-x: $originX + 1 * $offset;
 }
 
 .fire_stone_x1000 {
-  background-position: -150px -9px;
+  background-position-y: $originY + 0 * $offset;
+  background-position-x: $originX + 0 * $offset;
 }
 
 .purple_feather_x1 {
-  background-position: -197.5px -9px;
+  background-position-y: $originY + 3 * $offset;
+  background-position-x: $originX + 0 * $offset;
 }
 
 .event_dice_x1 {
-  background-position: -55px -57px;
+  background-position-y: $originY + 4 * $offset;
+  background-position-x: $originX + 2 * $offset;
 }
 
 .earth_stone_x1000 {
-  background-position: -197.5px -57px;
+  background-position-y: $originY + 0 * $offset;
+  background-position-x: $originX + 3 * $offset;
 }
 
 .white_feather_x1_3 {
-  background-position: -7.5px -104px;
+  background-position-y: $originY + 1 * $offset;
+  background-position-x: $originX + 4 * $offset;
 }
 
 .wind_stone_x1000 {
-  background-position: -7.5px -152px;
+  background-position-y: $originY + 0 * $offset;
+  background-position-x: $originX + 2 * $offset;
 }
 
 .emerald_x150 {
-  background-position: -197.5px -152px;
+  background-position-y: $originY + 2 * $offset;
+  background-position-x: $originX + 4 * $offset;
 }
 
 .green_feather_x1 {
-  background-position: -7.5px -199px;
+  background-position-y: $originY + 3 * $offset;
+  background-position-x: $originX + 4 * $offset;
 }
 
 .water_stone_x1000 {
-  background-position: -55px -199px;
+  background-position-y: $originY + 0 * $offset;
+  background-position-x: $originX + 1 * $offset;
 }
 
 .emerald_x30_1500 {
-  background-position: -102.5px -199px;
+  background-position-y: $originY + 2 * $offset;
+  background-position-x: $originX + 0 * $offset;
 }
 
 .diamond_x500 {
-  background-position: -150px -199px;
+  background-position-y: $originY + 4 * $offset;
+  background-position-x: $originX + 0 * $offset;
 }
