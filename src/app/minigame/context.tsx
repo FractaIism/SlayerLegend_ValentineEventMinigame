@@ -6,10 +6,10 @@ import { useImmer, Updater } from "use-immer";
 
 export const GlobalVariableContext = createContext({
   blockSize: 44,
-  gapX: 3.5,
-  gapY: 3.0,
-  startX: 7.5,
-  startY: 9.0,
+  gapX: 2.7,
+  gapY: 2.3,
+  startX: 9.5,
+  startY: 11.0,
   // NOTE: exclude teleport positions
   validPositions: [
     { row: 4, col: 4 },
