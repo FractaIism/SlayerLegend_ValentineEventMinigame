@@ -1,0 +1,45 @@
+@use "sass:color";
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlayBlockInvisible {
+  fill: transparent;
+}
+
+.overlayBlockVisible {
+  fill: none;
+  stroke-width: 1.5px;
+  stroke: var(--color);
+}
+
+$cyan: rgba(157, 249, 255, 1);
+$violet: rgba(179, 130, 237, 1);
+$mixed: color.mix($cyan, $violet);
+
+.cyan {
+  --color: #{$cyan};
+}
+
+.violet {
+  --color: #{$violet};
+}
+
+.mixed {
+  --color: #{$mixed};
+}
+
+.cyanShadow {
+  flood-color: $cyan;
+}
+
+.violetShadow {
+  flood-color: $violet;
+}
+
+.mixedShadow {
+  flood-color: $mixed;
+}

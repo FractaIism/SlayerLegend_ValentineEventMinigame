@@ -1,0 +1,61 @@
+$blockSize: 44px;
+
+.blockIcon {
+  width: $blockSize;
+  height: $blockSize;
+  margin-right: 3px;
+  background-image: url(/images/minigame.png);
+  background-size: 250px;
+}
+
+.diamond_x100_5000 {
+  background-position: -55px -9px;
+}
+
+.white_feather_x1 {
+  background-position: -102.5px -9px;
+}
+
+.fire_stone_x1000 {
+  background-position: -150px -9px;
+}
+
+.purple_feather_x1 {
+  background-position: -197.5px -9px;
+}
+
+.event_dice_x1 {
+  background-position: -55px -57px;
+}
+
+.earth_stone_x1000 {
+  background-position: -197.5px -57px;
+}
+
+.white_feather_x1_3 {
+  background-position: -7.5px -104px;
+}
+
+.wind_stone_x1000 {
+  background-position: -7.5px -152px;
+}
+
+.emerald_x150 {
+  background-position: -197.5px -152px;
+}
+
+.green_feather_x1 {
+  background-position: -7.5px -199px;
+}
+
+.water_stone_x1000 {
+  background-position: -55px -199px;
+}
+
+.emerald_x30_1500 {
+  background-position: -102.5px -199px;
+}
+
+.diamond_x500 {
+  background-position: -150px -199px;
+}

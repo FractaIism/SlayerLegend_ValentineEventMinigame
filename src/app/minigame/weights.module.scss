@@ -1,0 +1,31 @@
+$blockSize: 44px;
+$colWidth: 100px;
+
+.sortableWeightList {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.sortByWeightLabel {
+  display: block;
+  height: 1.5rem;
+}
+
+.weightList {
+  display: inline-grid;
+  // assigned in JS inline style
+  // grid-template-rows: repeat(4, $blockSize);
+  grid-auto-columns: $colWidth;
+  grid-auto-flow: column;
+  gap: 3px;
+}
+
+.weightItem {
+  display: flex;
+}
+
+.weightInput {
+  text-align: center;
+  width: calc($colWidth - $blockSize - 13px);
+}

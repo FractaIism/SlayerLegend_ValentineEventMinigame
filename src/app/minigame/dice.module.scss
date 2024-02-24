@@ -1,0 +1,40 @@
+$blockSize: 116px / 2;
+
+.diceIcon {
+  display: inline-block;
+  width: $blockSize;
+  height: $blockSize;
+  background-image: url(/images/dice.png);
+  background-size: $blockSize * 2 $blockSize;
+  flex-shrink: 0;
+}
+
+.dice_145 {
+  background-position-x: 0;
+}
+
+.dice_236 {
+  background-position-x: $blockSize;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.calculatorRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calculatorText {
+  display: inline-flex;
+  align-items: center;
+}
+
+.highlighted {
+  filter: drop-shadow(0 0 10px fuchsia);
+}
