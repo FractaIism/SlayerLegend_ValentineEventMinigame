@@ -91,7 +91,7 @@ function DiceCalculatorText({
     const reachableIndexes = moves.map((n) => (slayerIndex + n) % 16);
     const reachableItems = reachableIndexes.map(
       (idx) => items.filter((item) => item.indexes.includes(idx))[0],
-    );
+    ).filter(Boolean);
     return reachableItems;
   }
 
