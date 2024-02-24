@@ -72,7 +72,7 @@ function DiceIcon({
   );
 }
 
-type EventuallyReachableItem = ItemI | ItemI[][];
+type EventuallyReachableItem = EventuallyReachableItem[][] | ItemI;
 
 function DiceCalculatorText({
   slayerIndex,
