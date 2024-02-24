@@ -136,30 +136,16 @@ function DiceCalculatorText({
   }
 
   function computeWeightedAverage(
-    items: ItemI[],
-    slayerIndex: number,
-    moves: number[],
+    eventuallyReachableItems: EventuallyReachableItem[],
+    depth: number = 0,
   ): number {
-    const eventuallyReachableItems = getEventuallyReachableItems(
-      items,
-      slayerIndex,
-      moves,
-    );
     const weightedAvg = eventuallyReachableItems.reduce(
       (sum, item, i) =>
         sum +
         (Array.isArray(item)
           ? Math.max(
-              computeWeightedAverage(
-                items,
-                (slayerIndex + moves[i]) % 16,
-                [1, 4, 6],
-              ),
-              computeWeightedAverage(
-                items,
-                (slayerIndex + moves[i]) % 16,
-                [2, 3, 5],
-              ),
+              computeWeightedAverage(item[0], depth + 1),
+              computeWeightedAverage(item[1], depth + 1),
             )
           : item.weight) /
           3,
@@ -174,7 +160,7 @@ function DiceCalculatorText({
     slayerIndex,
     moves,
   );
-  const weightedAvg = computeWeightedAverage(items, slayerIndex, moves);
+  const weightedAvg = computeWeightedAverage(eventuallyReachableItems);
 
   useEffect(() => setWeightedAvg(weightedAvg), [setWeightedAvg, weightedAvg]);
 
