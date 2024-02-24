@@ -49,10 +49,10 @@ function ItemsProvider({ children }: { children: ReactNode }) {
     { indexes: [13], weight: 10, className: iconStyles.white_feather_x1_3 },
     { indexes: [5], weight: 80, className: iconStyles.purple_feather_x1 },
     { indexes: [15], weight: 100, className: iconStyles.green_feather_x1 },
-    { indexes: [10], weight: 10, className: iconStyles.wind_stone_x1000 },
-    { indexes: [11], weight: 20, className: iconStyles.earth_stone_x1000 },
+    { indexes: [10], weight: 5, className: iconStyles.wind_stone_x1000 },
+    { indexes: [11], weight: 10, className: iconStyles.earth_stone_x1000 },
     { indexes: [8], weight: 10, className: iconStyles.fire_stone_x1000 },
-    { indexes: [9], weight: 1, className: iconStyles.water_stone_x1000 },
+    { indexes: [9], weight: 20, className: iconStyles.water_stone_x1000 },
     { indexes: [2, 7], weight: 0, className: iconStyles.event_dice_x1 },
   ]);
 
